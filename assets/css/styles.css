@@ -1,0 +1,184 @@
+/* RESET - Start */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*RESET - stop*/
+body {
+  background-color: hsl(226, 43%, 10%);
+  padding: 1.5rem;
+}
+
+.time__dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.time__user-section {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0.9375rem;
+}
+.time__user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: hsl(246, 80%, 60%);
+  border-radius: calc(0.9375rem - 2px);
+}
+.time__user-avatar {
+  border-radius: 50%;
+  border: 3px solid white;
+}
+.time__user-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.time__user-subtitle {
+  font-family: Rubik, sans-serif;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: hsl(236, 100%, 87%);
+}
+.time__user-name {
+  font-family: Rubik, sans-serif;
+  line-height: 1.75rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: white;
+}
+.time__user-timeframes {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-around;
+  padding-block: 1.5rem;
+}
+.time__user-timeframe {
+  font-family: Rubik, sans-serif;
+  line-height: 1.3125rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: hsl(235, 45%, 61%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.time__user-timeframe:hover {
+  color: white;
+}
+.time__activity {
+  padding-block-start: 2.5rem;
+  border-radius: 0.9375rem;
+}
+.time__activity--work {
+  background-color: hsl(15, 100%, 70%);
+  background-image: url(../images/icon-work.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.875rem right 0.875rem;
+}
+.time__activity--play {
+  background-color: hsl(195, 74%, 62%);
+  background-image: url(../images/icon-play.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.4rem right 0.875rem;
+}
+.time__activity--study {
+  background-color: hsl(348, 100%, 68%);
+  background-image: url(../images/icon-study.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.875rem right 0.875rem;
+}
+.time__activity--exercise {
+  background-color: hsl(145, 58%, 55%);
+  background-image: url(../images/icon-exercise.svg);
+  background-repeat: no-repeat;
+  background-position: top 0 right 0.875rem;
+}
+.time__activity--social {
+  background-color: hsl(264, 64%, 52%);
+  background-image: url(../images/icon-social.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.875rem right 0.875rem;
+}
+.time__activity--self-care {
+  background-color: hsl(43, 84%, 65%);
+  background-image: url(../images/icon-self-care.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.875rem right 0.875rem;
+}
+.time__activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: hsl(235, 46%, 20%);
+  padding: 1.5rem;
+  border-radius: calc(0.9375rem - 2px);
+}
+.time__activity-row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.time__activity-row-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.time__activity-type {
+  font-family: Rubik, sans-serif;
+  line-height: 1.3125rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: white;
+}
+.time__activity-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.time__activity-hours {
+  font-family: Rubik, sans-serif;
+  line-height: 1.875rem;
+  font-weight: 300;
+  font-size: 2rem;
+  color: white;
+}
+.time__activity-previous {
+  font-family: Rubik, sans-serif;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: hsl(236, 100%, 87%);
+}

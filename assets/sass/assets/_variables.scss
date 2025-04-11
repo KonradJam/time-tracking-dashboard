@@ -1,0 +1,106 @@
+// Viewport breakpoints
+$viewport-xs: 23.4375rem;
+$viewport-sm: 37.5rem;
+$viewport-md: 48rem;
+$viewport-lg: 64rem;
+$viewport-xl: 90rem;
+
+// Colors
+$purple-600: hsl(246, 80%, 60%);
+$orange-300: hsl(15, 100%, 70%);  // work
+$blue-300: hsl(195, 74%, 62%);    // play
+$pink-400: hsl(348, 100%, 68%);   // study
+$green-400: hsl(145, 58%, 55%);   // exercise
+$purple-700: hsl(264, 64%, 52%);  // social
+$yellow-300: hsl(43, 84%, 65%);   // self care
+$navy-950: hsl(226, 43%, 10%);
+$navy-900: hsl(235, 46%, 20%);
+$purple-500: hsl(235, 45%, 61%);
+$navy-200: hsl(236, 100%, 87%);
+
+// Font families
+$font-primary: 'Rubik', sans-serif;
+
+// Spacing
+$spacing-0: 0;
+$spacing-100: 0.5rem;   // 8px
+$spacing-200: 1rem;     // 16px
+$spacing-300: 1.5rem;   // 24px
+$spacing-400: 2rem;     // 32px
+$spacing-500: 2.5rem;   // 40px
+
+// Border
+$border-radius: .9375rem;
+
+// Text Presets
+$text-preset-1: (
+  font-size: (
+    font-size-1: (fs: 3.5rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    line-height: 4.125rem,
+    font-weight: 300,
+  )
+);
+
+$text-preset-2: (
+  font-size: (
+    font-size-1: (fs: 2.5rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    line-height: 2.5rem,
+    font-weight: 300,
+  )
+);
+
+$text-preset-3: (
+  font-size: (
+    font-size-1: (fs: 2rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    line-height: 1.875rem,
+    font-weight: 300,
+  )
+);
+
+$text-preset-4: (
+  font-size: (
+    font-size-1: (fs: 1.5rem)
+  ),
+  styles: ( 
+    font-family: $font-primary,
+    line-height: 1.75rem,
+    font-weight: 300,
+  )
+);
+
+$text-preset-5: (
+  font-size: (
+    font-size-1: (fs: 1.125rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    line-height: 1.3125rem,
+    font-weight: 400,
+  )
+);
+
+$text-preset-6: (
+  font-size: (
+    font-size-1: (fs: 0.9375rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    line-height: 1.125rem,
+    font-weight: 400,
+  )
+);
+
+
+
+
+
+

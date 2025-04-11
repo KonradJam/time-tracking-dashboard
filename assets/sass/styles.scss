@@ -1,0 +1,160 @@
+@use "assets/reset" as *;
+@use "assets/variables" as *;
+@use "assets/fluid-typography" as *;
+
+body {
+    background-color: $navy-950;
+    padding: $spacing-300;
+}
+
+.time {
+    &__dashboard {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-300;
+    }
+
+    &__user-section {
+        background-color: $navy-900;
+        border-radius: $border-radius;
+    }
+
+    &__user-info {
+        display: flex;
+        align-items: center;
+        gap: $spacing-300;
+        padding: $spacing-400;
+        background-color: $purple-600;
+        border-radius: calc($border-radius - 2px);
+    }
+
+    &__user-avatar {
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+
+    &__user-text {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-100;
+    }
+
+    &__user-subtitle {
+        @include fluid-typography($text-preset-6);
+        color: $navy-200;
+    }
+
+    &__user-name {
+        @include fluid-typography($text-preset-4);
+        color: white;
+    }
+
+    &__user-timeframes {
+        display: flex;
+        gap: $spacing-100;
+        justify-content: space-around;
+        padding-block: $spacing-300;
+    }
+
+    &__user-timeframe {
+        @include fluid-typography($text-preset-5);
+        color: $purple-500;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__user-timeframe:hover {
+        color: white;
+    }
+
+    &__activity {
+        padding-block-start: $spacing-500;
+        border-radius: $border-radius;
+    }
+
+    &__activity--work {
+        background-color: $orange-300;
+        background-image: url(../images/icon-work.svg);
+        background-repeat: no-repeat;
+        background-position: top -0.875rem right 0.875rem;
+    }
+
+    &__activity--play {
+        background-color: $blue-300;
+        background-image: url(../images/icon-play.svg);
+        background-repeat: no-repeat;
+        background-position: top -0.4rem right 0.875rem;
+    }
+
+    &__activity--study {
+        background-color: $pink-400;
+        background-image: url(../images/icon-study.svg);
+        background-repeat: no-repeat;
+        background-position: top -0.875rem right 0.875rem;
+    }
+
+    &__activity--exercise {
+        background-color: $green-400;
+        background-image: url(../images/icon-exercise.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 right 0.875rem;
+    }
+
+    &__activity--social {
+        background-color: $purple-700;
+        background-image: url(../images/icon-social.svg);
+        background-repeat: no-repeat;
+        background-position: top -0.875rem right 0.875rem;
+    }
+
+    &__activity--self-care {
+        background-color: $yellow-300;
+        background-image: url(../images/icon-self-care.svg);
+        background-repeat: no-repeat;
+        background-position: top -0.875rem right 0.875rem;
+    }
+
+    &__activity-info {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-100;
+        background-color: $navy-900;
+        padding: $spacing-300;
+        border-radius: calc($border-radius - 2px);
+    }
+
+    &__activity-row-1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__activity-row-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__activity-type {
+        @include fluid-typography($text-preset-5);
+        color: white;
+    }
+
+    &__activity-menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    
+    &__activity-hours {
+        @include fluid-typography($text-preset-3);
+        color: white;
+    }
+
+    &__activity-previous {
+        @include fluid-typography($text-preset-6);
+        color: $navy-200;
+    }
+    
+    
+}
