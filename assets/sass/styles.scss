@@ -9,6 +9,7 @@ body {
 
 .time {
     &__dashboard {
+        inline-size: 100%;
         display: grid;
         grid-template-columns: 1fr;
         gap: $spacing-300;
@@ -62,6 +63,7 @@ body {
         background-color: transparent;
         border: none;
         cursor: pointer;
+        transition: color 0.3s ease;
     }
 
     &__user-timeframe:hover {
@@ -69,6 +71,7 @@ body {
     }
 
     &__activity {
+        display: flex;
         padding-block-start: $spacing-500;
         border-radius: $border-radius;
     }
@@ -118,10 +121,16 @@ body {
     &__activity-info {
         display: flex;
         flex-direction: column;
+        inline-size: 100%;
         gap: $spacing-100;
         background-color: $navy-900;
         padding: $spacing-300;
         border-radius: calc($border-radius - 2px);
+        transition: background-color 0.3s ease;
+    }
+
+    &__activity-info:hover {
+        background-color: $navy-800;
     }
 
     &__activity-row-1 {
@@ -141,9 +150,15 @@ body {
     }
 
     &__activity-menu {
+        color: $navy-200;
         background-color: transparent;
         border: none;
         cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    &__activity-menu:hover {
+        color: white;
     }
     
     &__activity-hours {
@@ -157,4 +172,103 @@ body {
     }
     
     
+}
+
+@media (min-width: $viewport-sm) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        block-size: 100vh;
+    }
+
+    .time {
+        &__dashboard {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__user-section {
+            grid-column: span 2;
+        }
+    }
+}
+
+@media (min-width: $viewport-md) {
+    body {
+        padding: 0 4.875rem;
+    }
+
+    .time {
+        &__dashboard {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__user-section {
+            grid-column: span 3;
+        }
+        
+        &__user-timeframes {
+            inline-size: 56%;
+            margin-inline: auto;
+        }
+
+        &__activity-info {
+            gap: $spacing-200;
+        }
+
+        &__activity-row-2 {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-100;
+        }
+
+        &__activity-hours {
+            @include fluid-typography($text-preset-1);
+        }
+    }
+}
+
+@media (min-width: $viewport-xl) {
+    body {
+        padding: 0 10.125rem;
+    }
+
+    .time {
+        &__dashboard {
+            grid-template-columns: repeat(4, 1fr);
+            gap: $spacing-400;
+        }
+
+        &__user-section {
+            grid-row: span 2;
+            grid-column: 1;
+        }
+
+        &__user-info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-500;
+            block-size: 22.125rem;
+        }
+
+        &__user-name {
+            @include fluid-typography($text-preset-2);
+        }
+
+        &__user-timeframes {
+            margin: 0;
+            padding: $spacing-400;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-300;
+        }
+
+        &__activity-info {
+            padding: $spacing-400;
+        }
+
+        &__activity-row-2 {
+            gap: $spacing-200;
+        }
+    }
 }

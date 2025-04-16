@@ -41,6 +41,7 @@ body {
 }
 
 .time__dashboard {
+  inline-size: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
@@ -95,11 +96,13 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 .time__user-timeframe:hover {
   color: white;
 }
 .time__activity {
+  display: flex;
   padding-block-start: 2.5rem;
   border-radius: 0.9375rem;
 }
@@ -142,10 +145,15 @@ body {
 .time__activity-info {
   display: flex;
   flex-direction: column;
+  inline-size: 100%;
   gap: 0.5rem;
   background-color: hsl(235, 46%, 20%);
   padding: 1.5rem;
   border-radius: calc(0.9375rem - 2px);
+  transition: background-color 0.3s ease;
+}
+.time__activity-info:hover {
+  background-color: hsl(235, 41%, 34%);
 }
 .time__activity-row-1 {
   display: flex;
@@ -164,9 +172,14 @@ body {
   color: white;
 }
 .time__activity-menu {
+  color: hsl(236, 100%, 87%);
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+.time__activity-menu:hover {
+  color: white;
 }
 .time__activity-hours {
   font-family: Rubik, sans-serif;
@@ -181,4 +194,86 @@ body {
   font-weight: 400;
   font-size: 0.9375rem;
   color: hsl(236, 100%, 87%);
+}
+
+@media (min-width: 36rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 100vh;
+  }
+  .time__dashboard {
+    grid-template-columns: 1fr 1fr;
+  }
+  .time__user-section {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 48rem) {
+  body {
+    padding: 0 4.875rem;
+  }
+  .time__dashboard {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .time__user-section {
+    grid-column: span 3;
+  }
+  .time__user-timeframes {
+    inline-size: 56%;
+    margin-inline: auto;
+  }
+  .time__activity-info {
+    gap: 1rem;
+  }
+  .time__activity-row-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .time__activity-hours {
+    font-family: Rubik, sans-serif;
+    line-height: 4.125rem;
+    font-weight: 300;
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 90rem) {
+  body {
+    padding: 0 10.125rem;
+  }
+  .time__dashboard {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .time__user-section {
+    grid-row: span 2;
+    grid-column: 1;
+  }
+  .time__user-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    block-size: 22.125rem;
+  }
+  .time__user-name {
+    font-family: Rubik, sans-serif;
+    line-height: 2.5rem;
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+  .time__user-timeframes {
+    margin: 0;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .time__activity-info {
+    padding: 2rem;
+  }
+  .time__activity-row-2 {
+    gap: 1rem;
+  }
 }
