@@ -70,10 +70,15 @@ body {
         color: white;
     }
 
+    &__user-timeframe--active {
+        color: white;
+    }
+
     &__activity {
         display: flex;
         padding-block-start: $spacing-500;
         border-radius: $border-radius;
+        background-color: $navy-900;
     }
 
     &__activity--work {
@@ -160,6 +165,10 @@ body {
     &__activity-menu:hover {
         color: white;
     }
+
+    &__activity-menu--hidden {
+        display: none;
+    }
     
     &__activity-hours {
         @include fluid-typography($text-preset-3);
@@ -170,8 +179,6 @@ body {
         @include fluid-typography($text-preset-6);
         color: $navy-200;
     }
-    
-    
 }
 
 @media (min-width: $viewport-sm) {
@@ -179,7 +186,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        block-size: 100vh;
+        min-block-size: 100vh;
     }
 
     .time {
@@ -228,7 +235,7 @@ body {
     }
 }
 
-@media (min-width: $viewport-xl) {
+@media (min-width: $viewport-lg) {
     body {
         padding: 0 10.125rem;
     }

@@ -101,10 +101,14 @@ body {
 .time__user-timeframe:hover {
   color: white;
 }
+.time__user-timeframe--active {
+  color: white;
+}
 .time__activity {
   display: flex;
   padding-block-start: 2.5rem;
   border-radius: 0.9375rem;
+  background-color: hsl(235, 46%, 20%);
 }
 .time__activity--work {
   background-color: hsl(15, 100%, 70%);
@@ -181,6 +185,9 @@ body {
 .time__activity-menu:hover {
   color: white;
 }
+.time__activity-menu--hidden {
+  display: none;
+}
 .time__activity-hours {
   font-family: Rubik, sans-serif;
   line-height: 1.875rem;
@@ -201,7 +208,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    block-size: 100vh;
+    min-block-size: 100vh;
   }
   .time__dashboard {
     grid-template-columns: 1fr 1fr;
@@ -239,7 +246,7 @@ body {
     font-size: 3.5rem;
   }
 }
-@media (min-width: 90rem) {
+@media (min-width: 64rem) {
   body {
     padding: 0 10.125rem;
   }
