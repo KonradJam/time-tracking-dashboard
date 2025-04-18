@@ -20,7 +20,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ### Links
 
-Live Site URL: [GitHub Pages]()
+Live Site URL: [GitHub Pages](https://konradjam.github.io/time-tracking-dashboard/)
 
 ## My process
 
