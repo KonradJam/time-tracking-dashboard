@@ -42,8 +42,9 @@ body {
 
 .time__dashboard {
   inline-size: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
+  max-inline-size: 69.75rem;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 .time__user-section {
@@ -103,6 +104,12 @@ body {
 }
 .time__user-timeframe--active {
   color: white;
+}
+.time__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  flex-grow: 1;
 }
 .time__activity {
   display: flex;
@@ -210,19 +217,16 @@ body {
     align-items: center;
     min-block-size: 100vh;
   }
-  .time__dashboard {
-    grid-template-columns: 1fr 1fr;
-  }
   .time__user-section {
     grid-column: span 2;
+  }
+  .time__body {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (min-width: 48rem) {
   body {
-    padding: 0 4.875rem;
-  }
-  .time__dashboard {
-    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1.5rem clamp(1.5rem, -8.625rem + 21.09375vi, 4.875rem);
   }
   .time__user-section {
     grid-column: span 3;
@@ -230,6 +234,9 @@ body {
   .time__user-timeframes {
     inline-size: 56%;
     margin-inline: auto;
+  }
+  .time__body {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .time__activity-info {
     gap: 1rem;
@@ -248,10 +255,10 @@ body {
 }
 @media (min-width: 64rem) {
   body {
-    padding: 0 10.125rem;
+    padding: 1.5rem clamp(4.875rem, -8.0480769231rem + 20.1923076923vi, 10.125rem);
   }
   .time__dashboard {
-    grid-template-columns: repeat(4, 1fr);
+    flex-direction: row;
     gap: 2rem;
   }
   .time__user-section {
@@ -259,6 +266,7 @@ body {
     grid-column: 1;
   }
   .time__user-info {
+    max-inline-size: 15.9375rem;
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
@@ -276,6 +284,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
+  }
+  .time__body {
+    gap: 2rem;
   }
   .time__activity-info {
     padding: 2rem;

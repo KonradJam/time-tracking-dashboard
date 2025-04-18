@@ -10,8 +10,9 @@ body {
 .time {
     &__dashboard {
         inline-size: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
+        max-inline-size: 69.75rem;
+        display: flex;
+        flex-direction: column;
         gap: $spacing-300;
     }
 
@@ -72,6 +73,13 @@ body {
 
     &__user-timeframe--active {
         color: white;
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $spacing-300;
+        flex-grow: 1;
     }
 
     &__activity {
@@ -190,26 +198,22 @@ body {
     }
 
     .time {
-        &__dashboard {
-            grid-template-columns: 1fr 1fr;
-        }
-
         &__user-section {
             grid-column: span 2;
+        }
+
+        &__body {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
 
 @media (min-width: $viewport-md) {
     body {
-        padding: 0 4.875rem;
+        padding: $spacing-300 clamp-size($spacing-300, 4.875rem, $viewport-md, $viewport-lg);
     }
 
     .time {
-        &__dashboard {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
         &__user-section {
             grid-column: span 3;
         }
@@ -217,6 +221,10 @@ body {
         &__user-timeframes {
             inline-size: 56%;
             margin-inline: auto;
+        }
+
+        &__body {
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         &__activity-info {
@@ -237,12 +245,12 @@ body {
 
 @media (min-width: $viewport-lg) {
     body {
-        padding: 0 10.125rem;
+        padding: $spacing-300 clamp-size(4.875rem, 10.125rem, $viewport-lg, $viewport-xl);
     }
 
     .time {
         &__dashboard {
-            grid-template-columns: repeat(4, 1fr);
+            flex-direction: row;
             gap: $spacing-400;
         }
 
@@ -252,6 +260,7 @@ body {
         }
 
         &__user-info {
+            max-inline-size: 15.9375rem;
             flex-direction: column;
             align-items: flex-start;
             gap: $spacing-500;
@@ -268,6 +277,10 @@ body {
             flex-direction: column;
             align-items: flex-start;
             gap: $spacing-300;
+        }
+
+        &__body{
+            gap: $spacing-400;
         }
 
         &__activity-info {

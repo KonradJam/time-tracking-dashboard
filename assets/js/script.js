@@ -4,9 +4,6 @@ const CONFIG = {
     }
 }
 
-const timeActivity = document.querySelectorAll('.time__activity');
-const btnUserTimeframes = document.querySelectorAll('.time__user-timeframe');
-
 const fetchData = async () => {
     try {
         const response = await fetch(CONFIG.apiEndpoinds.data);
@@ -28,40 +25,44 @@ const fetchData = async () => {
 }
 
 const placeActivityData = (data, timeframe) => {
-    data.forEach((activity, index) => {
-        timeActivity[index].classList.add(`time__activity--${activity.title.toLowerCase().replace(' ', '-')}`);
-        const activityType = timeActivity[index].querySelector('.time__activity-type');
-        const activityHours = timeActivity[index].querySelector('.time__activity-hours');
-        const activityPrevious = timeActivity[index].querySelector('.time__activity-previous');
-        const activityMenu = timeActivity[index].querySelector('.time__activity-menu');
-        
-        activityType.textContent = activity.title;
-        activityHours.textContent = activity.timeframes[timeframe].current + 'hrs';
-        switch (timeframe) {
-            case 'daily':
-                activityPrevious.textContent = `Yesterday - ${activity.timeframes[timeframe].previous}hrs`;
-                break;
-            case 'weekly':
-                activityPrevious.textContent = `Last Week - ${activity.timeframes[timeframe].previous}hrs`;
-                break;
-            case 'monthly':
-                activityPrevious.textContent = `Last Month - ${activity.timeframes[timeframe].previous}hrs`;
-                break;
-            default:
-                activityPrevious.textContent = `Yesterday - ${activity.timeframes[timeframe].previous}hrs`;
-                break;
-        }
-        activityMenu.classList.remove('time__activity-menu--hidden');
+    const timeBody = document.querySelector('.time__body');
+    let contentOfTimeBody = '';
+    const lastTimeframe = timeframe === 'daily' ? 'Yesterday' : timeframe === 'weekly' ? 'Last Week' : 'Last Month';
+    
+    data.forEach((activity) => {
+        contentOfTimeBody += `
+            <section class="time__activity time__activity--${activity.title.toLowerCase().replace(/\s+/g, '-')}">
+                <div class="time__activity-info">
+                    <div class="time__activity-row-1">
+                        <h2 class="time__activity-type">${activity.title}</h2>
+                    <button class="time__activity-menu" aria-label="Open activity menu">
+                        <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/>
+                        </svg>
+                    </button>
+                    </div>
+                    <div class="time__activity-row-2">
+                    <p class="time__activity-hours">${activity.timeframes[timeframe].current}hrs</p>
+                    <p class="time__activity-previous">
+                        ${lastTimeframe} - ${activity.timeframes[timeframe].previous}hrs
+                    </p>
+                    </div>
+                </div>
+            </section>
+        `
     });
+    timeBody.innerHTML = contentOfTimeBody;
 };
 
 const initialize = async () => {
+    const btnUserTimeframes = document.querySelectorAll('.time__user-timeframe');
+    const btnUserTimeframeDaily = document.querySelector('button[data-timeframe="daily"]');
     const data = await fetchData();
 
     if (!data) throw new Error('No data found');
 
     placeActivityData(data, 'daily');
-    document.querySelector('button[data-timeframe="daily"]').classList.add('time__user-timeframe--active');
+    btnUserTimeframeDaily.classList.add('time__user-timeframe--active');
 
     btnUserTimeframes.forEach(btn => {
         btn.addEventListener('click', () => {
