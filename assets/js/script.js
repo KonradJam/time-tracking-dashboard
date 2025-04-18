@@ -1,6 +1,6 @@
 const CONFIG = {
     apiEndpoinds: {
-        data: './assets/data.json'
+        data: 'assets/data.json'
     }
 }
 
